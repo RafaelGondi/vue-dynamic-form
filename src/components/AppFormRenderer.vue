@@ -10,22 +10,22 @@
 			>
 				<v-text-field
 					v-if="item.type === 'text'"
+					v-model="item.value"
 					:rules="item.required ? ruleRequired : []"
 					:name="item.name"
 					:label="item.label"
 					:color="configData.color"
-					v-model="item.value"
 					outlined
 					clearable
 					hide-details
 				/>
 				<v-select
 					v-if="item.type === 'select'"
+					v-model="item.value"
 					:rules="item.required ? ruleRequired : []"
 					:name="item.name"
 					:label="item.label"
 					:color="configData.color"
-					v-model="item.value"
 					:items="item.options"
 					item-value="value"
 					item-text="text"
@@ -35,11 +35,11 @@
 				/>
 				<v-textarea
 					v-if="item.type === 'textarea'"
+					v-model="item.value"
 					:rules="item.required ? ruleRequired : []"
 					:name="item.name"
 					:label="item.label"
 					:color="configData.color"
-					v-model="item.value"
 					outlined
 					clearable
 					hide-details
@@ -64,7 +64,7 @@ export default {
 		configData: {
 			type: Object,
 			default: () => {},
-		}
+		},
 	},
 };
 </script>
